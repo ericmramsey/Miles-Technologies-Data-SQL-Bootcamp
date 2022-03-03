@@ -33,7 +33,7 @@ DROP TABLE IF EXISTS BasementRats;
 -- CREATE TABLE statements for data in Taverns Database --
 CREATE TABLE Locations(
 
-	LocationID int IDENTITY(200, 1) PRIMARY KEY,
+	LocationID int IDENTITY(1, 1) PRIMARY KEY,
 	LocationName varchar(250)
 
 );
@@ -49,7 +49,7 @@ CREATE TABLE Tavern(
 
 CREATE TABLE Supplies(
 
-	SuppliesID int IDENTITY(300, 1),
+	SuppliesID int IDENTITY(1, 1),
 	SupplyUnitNum int,
 	SupplyName varchar(250),
 	SupplyCost int,
@@ -61,7 +61,7 @@ CREATE TABLE Supplies(
 
 CREATE TABLE TavernServiceStatus(
 
-	TavernServiceStatusID int IDENTITY(500, 1) PRIMARY KEY,
+	TavernServiceStatusID int IDENTITY(1, 1) PRIMARY KEY,
 	TavernServiceStatus varchar(250)
 
 );
@@ -69,7 +69,7 @@ CREATE TABLE TavernServiceStatus(
 
 CREATE TABLE TavernServices(
 
-	TavernServiceID int IDENTITY(400, 1),
+	TavernServiceID int IDENTITY(1, 1),
 	ServiceName varchar(250),
 	TavernServiceStatusID int FOREIGN KEY REFERENCES TavernServiceStatus(TavernServiceStatusID),
 	TavernID int FOREIGN KEY REFERENCES Tavern(TavernID)
@@ -78,14 +78,14 @@ CREATE TABLE TavernServices(
 
 CREATE TABLE Roles(
 
-	RoleID int IDENTITY(700, 1) PRIMARY KEY,
+	RoleID int IDENTITY(1, 1) PRIMARY KEY,
 	RoleName varchar(250)
 
 );
 
 CREATE TABLE Users(
 
-	UserID int IDENTITY(600, 1),
+	UserID int IDENTITY(1, 1),
 	UserName varchar(250),
 	UserDOB varchar(250),
 	RoleID int FOREIGN KEY REFERENCES Roles(RoleID)
@@ -112,11 +112,11 @@ VALUES
 
 INSERT INTO Tavern (TavernName, FloorCount, LocationID) 
 VALUES 
-	('The Outskirts Inn', 3, 200),
-	('The Shaggy Bear', 3, 201),
-	('The New Narakort Inn', 5, 202),
-	('The Country Inn', 2, 203),
-	('The Sea Serpent Inn', 4, 204);
+	('The Outskirts Inn', 3, 1),
+	('The Shaggy Bear', 3, 2),
+	('The New Narakort Inn', 5, 3),
+	('The Country Inn', 2, 4),
+	('The Sea Serpent Inn', 4, 5);
 
 INSERT INTO Supplies (SupplyUnitNum, SupplyName, SupplyCost, SupplyCount) 
 VALUES
@@ -156,11 +156,11 @@ VALUES
 	
 INSERT INTO TavernServices(ServiceName, TavernServiceStatusID, TavernID)
 VALUES
-	('Gwent', 500, 1),
-	('Dice Poker', 501, 1),
-	('Fist Fighting Match', 500, 1),
-	('Horse Racing', 500, 1),
-	('Arm Wrestling', 502, 1);
+	('Gwent', 1, 1),
+	('Dice Poker', 2, 1),
+	('Fist Fighting Match', 1, 1),
+	('Horse Racing', 1, 1),
+	('Arm Wrestling', 3, 1);
 
 INSERT INTO Roles(RoleName)
 VALUES
@@ -176,11 +176,11 @@ VALUES
 
 INSERT INTO Users(UserName, UserDOB, RoleID)
 VALUES
-	('Geralt', '05/05/1168', 700),
-	('Roach', '06/31/1245', 701),
-	('Triss', '11/13/1235', 702),
-	('Yennefer', '08/04/1173', 702),
-	('Circi', '04/17/1251', 700);
+	('Geralt', '05/05/1168', 1),
+	('Roach', '06/31/1245', 2),
+	('Triss', '11/13/1235', 3),
+	('Yennefer', '08/04/1173', 3),
+	('Circi', '04/17/1251', 1);
 
 INSERT INTO BasementRats(RatName, TavernID)
 VALUES
