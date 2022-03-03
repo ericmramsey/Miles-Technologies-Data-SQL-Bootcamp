@@ -94,8 +94,9 @@ CREATE TABLE Users(
 
 CREATE TABLE BasementRats(
 
-	BasementRatsID int IDENTITY(800, 1),
-	RatName varchar(250)
+	BasementRatsID int IDENTITY(1, 1),
+	RatName varchar(250),
+	TavernID int FOREIGN KEY REFERENCES Tavern(TavernID)
 
 );
 
@@ -181,9 +182,9 @@ VALUES
 	('Yennefer', '08/04/1173', 702),
 	('Circi', '04/17/1251', 700);
 
-INSERT INTO BasementRats(RatName)
+INSERT INTO BasementRats(RatName, TavernID)
 VALUES
-	('Squeks'),
-	('Meeko'),
-	('Ralph'),
-	('Stew');
+	('Squeks', 1),
+	('Meeko', 2),
+	('Ralph', 2),
+	('Stew', 4);
