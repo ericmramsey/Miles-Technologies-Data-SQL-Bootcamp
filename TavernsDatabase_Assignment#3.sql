@@ -17,7 +17,7 @@
 	@version: 03/22/2022
 */
 
--- DROP TABLE statements for created tables in Taverns Database --
+-- DROP TABLE statements for created tables in Taverns Database and to run script multiple times --
 DROP TABLE IF EXISTS Tavern;
 DROP TABLE IF EXISTS Locations;
 DROP TABLE IF EXISTS TavernOwner;
