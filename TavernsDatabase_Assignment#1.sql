@@ -17,7 +17,7 @@
 	tavern it belongs to.
 
 	@author: Eric Ramsey
-	@version: 03/22/2022
+	@version: 02/22/2022
 */
 
 -- DROP TABLE statements for created tables in Taverns Database --
