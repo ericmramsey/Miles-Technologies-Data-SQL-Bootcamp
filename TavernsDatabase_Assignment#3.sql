@@ -14,7 +14,7 @@
 	grouping (lvl 1-10, 10-20, etc)
 
 	@author: Eric Ramsey
-	@version: 03/22/2022
+	@version: 03/10/2022
 */
 
 -- DROP TABLE statements for created tables in Taverns Database and to run script multiple times --
