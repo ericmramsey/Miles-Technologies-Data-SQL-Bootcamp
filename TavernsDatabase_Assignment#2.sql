@@ -22,7 +22,7 @@
 	constraints (you can comment these out so that your script still runs)
 
 	@author: Eric Ramsey
-	@version: 03/22/2022
+	@version: 02/28/2022
 */
 
 -- DROP TABLE statements for created tables in Taverns Database --
